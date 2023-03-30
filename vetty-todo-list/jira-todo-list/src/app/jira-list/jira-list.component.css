@@ -1,0 +1,18 @@
+.add-list{
+    border: 1px solid grey;
+    margin: 1% 1% 0% 1%;
+    padding: 1%;
+    width: 100px;
+    margin-left: auto;
+}
+
+.list{
+    width: 20%;
+    margin: 1%;
+    border: 1px solid lightgrey;
+    height: 550px;
+}
+
+app-list{
+    height: 100%;
+}

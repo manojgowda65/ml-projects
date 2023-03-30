@@ -1,0 +1,46 @@
+<div class="d-flex-col list-item" (dragover)="allowDrop($event)" (drop)="dragDrop($event,list.id)">
+    <div class="list-header">
+        <label>{{list.header}}</label>
+    <button id="header-close" (click)="deleteList(list.id)">X</button>
+    </div>
+ <div style="max-height: 90%;overflow:auto;">
+    <ng-container *ngIf="list.cards && list.cards.length;else noCards">
+        <div *ngFor="let card of list.cards;let cIndex=index" class="card" draggable="true"   (dragstart)="drag($event,card)">
+            <app-card [cardInfo]="card"></app-card>
+        </div>
+    </ng-container>
+    <ng-template #noCards>
+       <label class="no-list"> Hey, you do not have any cards in this list. Use the '+' button to add new cards.</label>
+    </ng-template>
+ </div>
+   <div class="btn">
+    <button id="addNewBtn" (click)="showAddCardModal=true">
+        +
+    </button> 
+   </div>
+</div>
+
+<div id="myModal" class="modal" [ngStyle]="{'display':showAddCardModal?'block':'none'}">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span (click)="showAddCardModal=false" class="close">&times;</span>
+      <form [formGroup]="cardFormGroup" (submit)="addCardInfo()">
+        <div>
+          <h4>New Card</h4>
+        </div>
+        <div class="form-body">
+            <div class="form-control">
+                <label>Header <small class="text-danger">*</small><small class="text-danger" *ngIf="hasRequiredError('header')">Header is required</small></label>
+                <input type="text" formControlName="header"/>
+            </div>
+            <div class="form-control">
+                <label>Description <small class="text-danger">*</small><small class="text-danger" *ngIf="hasRequiredError('description')">Description is required</small></label>
+                <textarea type="text" formControlName="description"></textarea>
+            </div>
+        </div>
+        <button type="submit" [disabled]="cardFormGroup.invalid">Save</button>
+      </form>
+    </div>
+  
+  </div>

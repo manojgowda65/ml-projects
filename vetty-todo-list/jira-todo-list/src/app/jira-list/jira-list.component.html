@@ -1,0 +1,36 @@
+
+    <div class="d-flex-col">
+        <button type="button" class="add-list" (click)="showAddListModal=true">Add List</button>
+  
+  
+  <div class="list-items d-flex">
+    <ng-container *ngIf="jiraList.length;else noList">
+      <div *ngFor="let list of jiraList;let lIndex=index" class="d-flex-col list">
+        <app-list [list]="list"></app-list>
+      </div>
+    </ng-container>
+    <ng-template #noList>
+     <label> Hey, you do not have any lists. Please use the 'Add List' button to add a new list.</label>
+    </ng-template>
+  </div>
+    </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal" [ngStyle]="{'display':showAddListModal?'block':'none'}">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span (click)="showAddListModal=false" class="close">&times;</span>
+      <form [formGroup]="newListForm" (submit)="addNewList(newListForm.value)">
+        <div>
+          <h4>Add New List</h4>
+        </div>
+        <div class="form-control">
+          <label>Header <small class="text-danger">*</small><small class="text-danger" *ngIf="hasRequiredError('newListHeader')">Header is required</small></label>
+          <input  name="newListHeader" formControlName="newListHeader" type="text" required/>
+        </div>
+        <button type="submit" [disabled]="newListForm.invalid">Save</button>
+      </form>
+    </div>
+  
+  </div>

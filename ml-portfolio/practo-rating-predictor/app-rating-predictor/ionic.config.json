@@ -1,0 +1,7 @@
+{
+  "name": "app-rating-predictor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,39 @@
+.list-item{
+    height: 100%;
+   
+}
+.btn{
+       margin-top: auto; 
+       display: flex;
+       justify-content: center;
+       margin-bottom: 6%;
+}
+
+#addNewBtn{
+    width: 45px;
+    border-radius: 50%;
+    height: 45px;
+}
+
+.list-header{
+    margin-bottom: 11%;
+   
+}
+
+.list-header > label{
+    font-weight: 800;
+}
+
+.card,.list-header{
+    padding:4%;
+    border: 1px solid lightgrey;
+}
+
+.card{
+    margin: 3%;
+}
+
+label.no-list{
+    padding: 2%;
+    display: block;
+}
