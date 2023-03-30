@@ -1,27 +1,30 @@
-# JiraTodoList
+## Software installations
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+### Step1 - follow any one of the below methods to install nodejs
+1. Please download and install nodejs v18 from https://nodejs.org/en/download
+![image](https://user-images.githubusercontent.com/52273616/228837783-e25eb620-3d4a-4946-94de-edd4afdfb963.png)
+2. Open Command prompt and check if nodejs is installed using command-> node -v
 
-## Development server
+----OR-------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1 Download and install NVM from https://github.com/coreybutler/nvm-windows/releases
+![image](https://user-images.githubusercontent.com/52273616/228837962-ea4cefb3-5d44-4aee-9b1d-d73c5b49d271.png)
+2. Open Command prompt and check if NVM is installed using command-> nvm -v
+3. In the command prompt run "nvm install latest" to install latest nodejs version
+4. Open Command prompt and check if nodejs is installed using command-> node -v
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After nodejs, Please check if npm is installed. Run the command "npm -v".
 
-## Build
+Next, install angular cli , run command "npm install -g @angular/cli"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Project code setup
+Please clone or Download the current project
+Project folder name is 'jira-todo-list'.
+From your cli(command prompt), switch to your local project folder(jira-todo-list).
+> Run the following command, "npm install". This could take few seconds to minutes.
 
-## Running unit tests
+> to serve the application , from the command prompt run the following code "ng serve -o"
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> Once the app compilation is successfully, the browser should automatically launch a  tab pointing to "http://localhost:4200". If not, please launch browser and enter the same url.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
